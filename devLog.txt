@@ -1,0 +1,22 @@
+Vytvořil jsem si základní náčrt aplikace a definoval její funkce viz. příloha.
+
+Začnu s tvořením HTML a CSS
+
+Všechnu grafiku vygeneruji pomocí AI
+
+váhám jakou možnost zvolit jestli canvas nebo JS pro vykreslení rasteru. 
+
+canvas je pro mě hrozně složitý. moje idea je, že vytvořím loop která mi vždy vytvoří prázdý DIV.
+Ten div nastyluju pomocí css a vytvoří to rastr. Slibuju si od toho to, že tam bude lepší sinergie s JS.
+
+Každý div bude mít pomocí indexu z loops svoje jedinečné číslo, takže bude jednoduché přesně lokalizovat co se bude dít na rastru 
+zkusím to nejdřív pomocí HTML nasymulovat. loop udělat bude jednoduché. 
+
+zkouším se ještě poradit s chatGPT... Směju se nad tím co vymyslel, ta věc je dobrá tak na připomenutí syntax ale ne rozhodně pro to aby něco řešíl.. logicky... je to jazykoví model a myslet neumí. Není to žádná AI!
+
+stále přemýšlím kolik políček zvolit 3*3 bude pravděpodobně stači... 
+
+rozhodování jakou techniku zvolit array/nebo pracovat s atributama v HTML
+při programování 'ai' pro comp move jsem narazil na chybu
+kliknutí na obsazené políčko se mi zavolala funkce pro compmove
+další věc střídání symbolů jendoho hráče
