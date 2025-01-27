@@ -11,7 +11,7 @@ function selectPlayer(symbol) {
         score: 0         
     };
     localStorage.setItem('playerData', JSON.stringify(playerData));
-    window.location.href = 'board.html';
+    window.location.href = '/board.html';
 }
 
 
