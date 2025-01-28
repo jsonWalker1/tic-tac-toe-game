@@ -1,41 +1,58 @@
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
+
 .main {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     height: 100vh;
     background-image: url('../IMG/background.jpg'); 
-    background-size: contain; 
-    background-position: center; 
-}
-.button{
-    transition: transform 0.3s ease 0.2s;
-}
-.button:hover {
-    transform: scale(1.1);
-}
-.icon {
-    width: 300px;
-}
-
-/*BOARD*/
-.board {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    background-image: url('../IMG/board.png'); 
     background-size: cover; 
     background-position: center; 
 }
-.cell {
-    width: 155px;
-    height: 155px;
-    border: 2px solid black;
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Pevný počet sloupců */
+    width: 90vmin; /* Velikost boardu se přizpůsobuje oknu */
+    height: 90vmin; /* Výška se rovná šířce, aby byl rastr čtvercový */
+    max-width: 500px; /* Maximální šířka boardu pro velké obrazovky */
+    max-height: 500px; /* Maximální výška boardu pro velké obrazovky */
+    background-image: url('../IMG/board.png'); 
+    background-size: cover; 
+    background-position: center;
 }
+
+.cell {
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1; /* Každá buňka zůstane čtvercová */
+}
+
 .icon-board {
-    width: 155px;
-    height: 155px;
+    width: 90%; /* Ikona se přizpůsobí velikosti buňky */
+    height: 90%; /* Zachování poměru stran ikony */
+    object-fit: contain; /* Ikony se nebudou deformovat */
+}
+
+/* MEDIA QUERIES */
+
+/* Pro menší obrazovky lze pouze měnit velikost boardu */
+@media (max-width: 768px) {
+    .board {
+        width: 80vmin; /* Zmenšení boardu pro malé obrazovky */
+        height: 80vmin;
+    }
+}
+
+@media (max-width: 480px) {
+    .board {
+        width: 70vmin; /* Další zmenšení boardu */
+        height: 70vmin;
+    }
 }

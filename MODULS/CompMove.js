@@ -5,11 +5,11 @@ export function makeComputerMove() {
         let emptyCells = [];
     
         cells.forEach((cell, index) => {
-            if (!cell.querySelector('img')) { // Pokud políčko neobsahuje obrázek
-                emptyCells.push(index); // Přidáme index prázdného políčka
+            if (!cell.querySelector('img')) { 
+                emptyCells.push(index); 
             }
         });
-        return emptyCells; // Vrátíme pole prázdných políček
+        return emptyCells; 
     }
 
     // Funkce pro kontrolu výhry
@@ -17,7 +17,7 @@ export function makeComputerMove() {
         const cells = document.querySelectorAll('.cell');
         const winPatterns = [];
 
-        // Generování výherních vzorců: řady, sloupce, diagonály
+        
         for (let i = 0; i < 5; i++) {
             // Řady
             winPatterns.push([i * 5, i * 5 + 1, i * 5 + 2, i * 5 + 3, i * 5 + 4]);
@@ -36,33 +36,33 @@ export function makeComputerMove() {
                 cells[c].querySelector('img')?.alt === player &&
                 cells[d].querySelector('img')?.alt === player &&
                 !cells[e].querySelector('img')) {
-                return e; // Pokud je to vítězný tah, vrátíme prázdné políčko
+                return e; 
             }
         }
-        return null; // Žádný výherní tah
+        return null; 
     }
 
-    const emptyCells = getEmptyCells(); // Získáme prázdná políčka
+    const emptyCells = getEmptyCells();
 
-    let computerMove = checkForWin('O'); // Zkontrolujeme, jestli počítač může vyhrát
+    let computerMove = checkForWin('O'); 
     if (computerMove === null) {
-        let blockMove = checkForWin('X'); // Zkontrolujeme, jestli musí blokovat hráče
+        let blockMove = checkForWin('X');
         if (blockMove !== null) {
-            computerMove = blockMove; // Pokud je třeba blokovat, udělej tento tah
+            computerMove = blockMove; 
         }
     }
 
     if (computerMove === null && emptyCells.length > 0) {
-        const randomIndex = Math.floor(Math.random() * emptyCells.length); // Náhodně vyber volné políčko
+        const randomIndex = Math.floor(Math.random() * emptyCells.length);
         computerMove = emptyCells[randomIndex];
     }
 
     if (computerMove !== null) {
-        const selectedCell = document.querySelectorAll('.cell')[computerMove]; // Najdi odpovídající políčko v DOM
+        const selectedCell = document.querySelectorAll('.cell')[computerMove]; 
         const img = document.createElement('img');
         img.className = 'icon-board'
-        img.src = '../IMG/o.png'; // Počítač hraje 'O'
+        img.src = '../IMG/o.png'; 
         img.alt = 'O';
-        selectedCell.appendChild(img); // Vlož obrázek do políčka
+        selectedCell.appendChild(img); 
     }
 }
