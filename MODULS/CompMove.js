@@ -1,5 +1,6 @@
 // Zjištění prázdných políček
 export function makeComputerMove() {
+    console.log(1)
     function getEmptyCells() {
         const cells = document.querySelectorAll('.cell');
         let emptyCells = [];
@@ -13,7 +14,10 @@ export function makeComputerMove() {
     }
 
     // Funkce pro kontrolu výhry
+    //vzpočtení počtu možností
     function checkForWin(player) {
+         //vzpočtení počtu možností
+        console.log('1')
         const cells = document.querySelectorAll('.cell');
         const winPatterns = [];
 
@@ -23,11 +27,13 @@ export function makeComputerMove() {
             winPatterns.push([i * 5, i * 5 + 1, i * 5 + 2, i * 5 + 3, i * 5 + 4]);
             // Sloupce
             winPatterns.push([i, i + 5, i + 10, i + 15, i + 20]);
+            
         }
 
         // Diagonály
         winPatterns.push([0, 6, 12, 18, 24]);
         winPatterns.push([4, 8, 12, 16, 20]);
+        console.log(winPatterns)
 
         for (let pattern of winPatterns) {
             const [a, b, c, d, e] = pattern;
@@ -36,6 +42,7 @@ export function makeComputerMove() {
                 cells[c].querySelector('img')?.alt === player &&
                 cells[d].querySelector('img')?.alt === player &&
                 !cells[e].querySelector('img')) {
+                    console.log('1')
                 return e; 
             }
         }
@@ -55,6 +62,7 @@ export function makeComputerMove() {
     if (computerMove === null && emptyCells.length > 0) {
         const randomIndex = Math.floor(Math.random() * emptyCells.length);
         computerMove = emptyCells[randomIndex];
+        console.log(1)
     }
 
     if (computerMove !== null) {
@@ -63,6 +71,7 @@ export function makeComputerMove() {
         img.className = 'icon-board'
         img.src = '../IMG/o.png'; 
         img.alt = 'O';
-        selectedCell.appendChild(img); 
+        selectedCell.appendChild(img);
+        console.log(1) 
     }
 }

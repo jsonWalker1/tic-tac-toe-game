@@ -12,15 +12,23 @@
     background-image: url('../IMG/background.jpg'); 
     background-size: cover; 
     background-position: center; 
+    gap: 3rem;
+}
+.button {
+    border-radius: 20%;
+    transition: transform 0.3;
+}
+.button:hover {
+    transform: scale(1.1);
 }
 
 .board {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Pevný počet sloupců */
-    width: 90vmin; /* Velikost boardu se přizpůsobuje oknu */
-    height: 90vmin; /* Výška se rovná šířce, aby byl rastr čtvercový */
-    max-width: 500px; /* Maximální šířka boardu pro velké obrazovky */
-    max-height: 500px; /* Maximální výška boardu pro velké obrazovky */
+    grid-template-columns: repeat(5, 1fr);
+    width: 90vmin; 
+    height: 90vmin; 
+    max-width: 500px; 
+    max-height: 500px; 
     background-image: url('../IMG/board.png'); 
     background-size: cover; 
     background-position: center;
@@ -31,28 +39,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 1 / 1; /* Každá buňka zůstane čtvercová */
+    aspect-ratio: 1 / 1; 
 }
 
 .icon-board {
-    width: 90%; /* Ikona se přizpůsobí velikosti buňky */
-    height: 90%; /* Zachování poměru stran ikony */
-    object-fit: contain; /* Ikony se nebudou deformovat */
+    border-radius: 20%;
+    width: 90%; 
+    height: 90%; 
+    object-fit: contain; 
 }
 
-/* MEDIA QUERIES */
-
-/* Pro menší obrazovky lze pouze měnit velikost boardu */
 @media (max-width: 768px) {
     .board {
-        width: 80vmin; /* Zmenšení boardu pro malé obrazovky */
+        width: 80vmin; 
         height: 80vmin;
     }
 }
 
 @media (max-width: 480px) {
     .board {
-        width: 70vmin; /* Další zmenšení boardu */
+        width: 70vmin; 
         height: 70vmin;
     }
 }
