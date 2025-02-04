@@ -3,8 +3,6 @@ Jednoduchá implementace klasické hry Piškvorky (Tic Tac Toe) s AI soupeřem p
 
 Funkce:
 Single-player mód proti AI soupeři (počítač hraje za O)
-
-Možnost restartovat hru bez obnovení stránky
 Omezení:
 Automatická detekce vítězství nebo remízy není přitomná
 Nelze vybrat, za který symbol hrát (hráč hraje vždy za X)
@@ -12,6 +10,8 @@ AI logika je stále ve fázi ladění a může být vylepšena
 Jak spustit:
 https://app.netlify.com/sites/tic-tac116/overview
 Plány do budoucna:
+Počítadlo score hráče
+Možnost restartovat hru bez obnovení stránky
 Vylepšení AI pro lepší herní zážitek
 Možnost výběru mezi X a O
 Přidání volby obtížnosti AI
